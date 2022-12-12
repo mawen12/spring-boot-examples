@@ -23,6 +23,12 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <maven-clean.version>3.2.0</maven-clean.version>
+        <maven-compiler.version>3.10.0</maven-compiler.version>
+        <maven-deploy.version>3.0.0</maven-deploy.version>
+        <maven-install.version>3.1.0</maven-install.version>
+        <maven-war.version>3.3.2</maven-war.version>
     </properties>
 
     <scm>
@@ -42,8 +48,14 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>${maven-compiler.version}</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
@@ -51,6 +63,24 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy.version}</version>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven-install.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war.version}</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -83,6 +113,22 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
+
     </pluginRepositories>
+
+    <profiles>
+        <profile>
+            <id>spring-boot-1.x</id>
+        </profile>
+
+        <profile>
+            <id>spring-boot-2.x</id>
+            <modules>
+                <module>spring-boot-2.x-samples</module>
+                <module>spring-boot-2.x-samples/first-app-by-gui</module>
+                <module>spring-boot-2.x-samples/first-spring-boot-application</module>
+            </modules>
+        </profile>
+    </profiles>
 
 </project>
