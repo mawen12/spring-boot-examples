@@ -10,7 +10,12 @@
     </parent>
 
     <artifactId>spring-boot-integration-samples</artifactId>
-    <name>Spring Boot 集成示例</name>
+    <name>Spring Boot 集成 - 主工程</name>
+    <modules>
+        <module>spring-boot-quartz-sample</module>
+        <module>spring-boot-logging-sample</module>
+        <module>spring-boot-event-sample</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
@@ -28,12 +33,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-quartz</artifactId>
-            <version>${spring-boot.version}</version>
-        </dependency>
-    </dependencies>
 </project>

@@ -16,7 +16,6 @@
         <module>spring-boot-2.x-samples</module>
         <module>spring-framework-samples</module>
         <module>spring-boot-integration-samples</module>
-        <module>spring-boot-integration-samples/spring-boot-quartz-sample</module>
     </modules>
 
     <properties>
@@ -121,6 +120,9 @@
     <profiles>
         <profile>
             <id>spring-boot-1.x</id>
+            <modules>
+                <module>spring-boot-1.x-samples</module>
+            </modules>
         </profile>
 
         <profile>
@@ -129,6 +131,30 @@
                 <module>spring-boot-2.x-samples</module>
                 <module>spring-boot-2.x-samples/first-app-by-gui</module>
                 <module>spring-boot-2.x-samples/first-spring-boot-application</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>quartz</id>
+            <modules>
+                <module>spring-boot-integration-samples</module>
+                <module>spring-boot-integration-samples/spring-boot-quartz-sample</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>logging</id>
+            <modules>
+                <module>spring-boot-integration-samples</module>
+                <module>spring-boot-integration-samples/spring-boot-logging-sample</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>event</id>
+            <modules>
+                <module>spring-boot-integration-samples</module>
+                <module>spring-boot-integration-samples/spring-boot-event-sample</module>
             </modules>
         </profile>
     </profiles>
