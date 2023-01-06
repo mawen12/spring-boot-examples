@@ -15,6 +15,7 @@
         <module>spring-framework-2.5.6-sample</module>
         <module>spring-framework-3.2.x-sample</module>
         <module>spring-framework-4.3.x-sample</module>
+        <module>spring-aop-sample</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -44,6 +45,13 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!-- Spring AOP 依赖 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
                 <version>${spring.version}</version>
             </dependency>
 
