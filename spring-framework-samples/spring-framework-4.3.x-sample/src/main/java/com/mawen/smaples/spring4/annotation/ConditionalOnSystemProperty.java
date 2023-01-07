@@ -1,4 +1,4 @@
-package com.mawen.smaples.spring5.annotation;
+package com.mawen.smaples.spring4.annotation;
 
 import org.springframework.context.annotation.Conditional;
 

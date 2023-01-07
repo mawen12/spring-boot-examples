@@ -1,4 +1,4 @@
-package com.mawen.smaples.spring5.config;
+package com.mawen.smaples.spring4.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

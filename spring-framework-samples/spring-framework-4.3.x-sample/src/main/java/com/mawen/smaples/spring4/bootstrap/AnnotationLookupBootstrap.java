@@ -1,4 +1,4 @@
-package com.mawen.smaples.spring5.bootstrap;
+package com.mawen.smaples.spring4.bootstrap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;

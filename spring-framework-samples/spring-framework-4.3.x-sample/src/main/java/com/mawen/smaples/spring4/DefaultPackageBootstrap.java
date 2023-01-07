@@ -1,4 +1,4 @@
-package com.mawen.smaples.spring5;
+package com.mawen.smaples.spring4;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;

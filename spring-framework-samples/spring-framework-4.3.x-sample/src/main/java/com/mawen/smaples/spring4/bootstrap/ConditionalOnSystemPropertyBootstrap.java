@@ -1,7 +1,7 @@
-package com.mawen.smaples.spring5.bootstrap;
+package com.mawen.smaples.spring4.bootstrap;
 
-import com.mawen.smaples.spring5.annotation.ConditionalOnSystemProperty;
-import com.mawen.smaples.spring5.config.ConditionalMessageConfiguration;
+import com.mawen.smaples.spring4.annotation.ConditionalOnSystemProperty;
+import com.mawen.smaples.spring4.config.ConditionalMessageConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

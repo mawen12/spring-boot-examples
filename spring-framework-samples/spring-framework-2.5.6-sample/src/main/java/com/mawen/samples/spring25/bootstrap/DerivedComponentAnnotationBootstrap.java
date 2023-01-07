@@ -21,5 +21,7 @@ public class DerivedComponentAnnotationBootstrap {
         context.refresh();
         NameRepository nameRepository = (NameRepository) context.getBean("chineseNameRepository");
         System.out.printf("nameRepository.findAll() = %s \n", nameRepository.findAll());
+
+        context.close();
     }
 }

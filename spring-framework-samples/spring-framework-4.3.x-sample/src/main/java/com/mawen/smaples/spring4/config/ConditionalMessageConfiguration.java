@@ -1,6 +1,6 @@
-package com.mawen.smaples.spring5.config;
+package com.mawen.smaples.spring4.config;
 
-import com.mawen.smaples.spring5.annotation.ConditionalOnSystemProperty;
+import com.mawen.smaples.spring4.annotation.ConditionalOnSystemProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
