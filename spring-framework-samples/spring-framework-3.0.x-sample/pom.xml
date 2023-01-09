@@ -14,14 +14,19 @@
     <name>Spring Framework 3.0.x 示例工程</name>
 
     <properties>
-<!--        <spring.version>3.0.0.RELEASE</spring.version>-->
-        <spring.version>4.0.0.RELEASE</spring.version>
+        <spring.version>3.0.0.RELEASE</spring.version>
+<!--        <spring.version>4.0.0.RELEASE</spring.version>-->
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
         </dependency>
     </dependencies>
 
