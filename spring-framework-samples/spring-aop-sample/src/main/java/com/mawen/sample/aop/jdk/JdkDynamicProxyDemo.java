@@ -44,7 +44,6 @@ public class JdkDynamicProxyDemo {
         System.out.println(proxy.getClass().getSuperclass());
         System.out.println(Arrays.toString(proxy.getClass().getInterfaces()));
 
-
         EchoService echoService = (EchoService) proxy;
         System.out.println(echoService.echo("Hello World"));
     }
