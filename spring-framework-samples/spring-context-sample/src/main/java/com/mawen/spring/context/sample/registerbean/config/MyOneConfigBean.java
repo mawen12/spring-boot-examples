@@ -1,6 +1,6 @@
-package com.mawen.spring.context.sample.config;
+package com.mawen.spring.context.sample.registerbean.config;
 
-import com.mawen.spring.context.sample.model.MyBean;
+import com.mawen.spring.context.sample.registerbean.model.MyBean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;

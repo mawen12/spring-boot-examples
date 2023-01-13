@@ -1,4 +1,4 @@
-package com.mawen.spring.context.sample.service;
+package com.mawen.spring.context.sample.registerbean.service;
 
 /**
  * 日志服务

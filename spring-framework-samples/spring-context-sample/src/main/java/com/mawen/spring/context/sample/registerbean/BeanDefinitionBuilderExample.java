@@ -1,6 +1,6 @@
-package com.mawen.spring.context.sample;
+package com.mawen.spring.context.sample.registerbean;
 
-import com.mawen.spring.context.sample.model.MyBean;
+import com.mawen.spring.context.sample.registerbean.model.MyBean;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;

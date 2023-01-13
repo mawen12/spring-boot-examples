@@ -1,10 +1,8 @@
-package com.mawen.spring.context.sample;
+package com.mawen.spring.context.sample.registerbean;
 
-import com.mawen.spring.context.sample.service.LogService;
-import com.mawen.spring.context.sample.service.OrderService;
-import com.mawen.spring.context.sample.util.CustomizersUtil;
+import com.mawen.spring.context.sample.registerbean.service.LogService;
+import com.mawen.spring.context.sample.registerbean.service.OrderService;
 import org.springframework.beans.factory.config.BeanDefinitionCustomizer;
-import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.context.support.GenericApplicationContext;
 
 import java.util.Arrays;

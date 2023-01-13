@@ -1,7 +1,7 @@
-package com.mawen.spring.context.sample;
+package com.mawen.spring.context.sample.registerbean;
 
-import com.mawen.spring.context.sample.config.MyTwoConfigBean;
-import com.mawen.spring.context.sample.model.MyBean;
+import com.mawen.spring.context.sample.registerbean.config.MyTwoConfigBean;
+import com.mawen.spring.context.sample.registerbean.model.MyBean;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

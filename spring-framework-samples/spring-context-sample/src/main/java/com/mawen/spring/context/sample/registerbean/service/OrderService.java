@@ -1,6 +1,4 @@
-package com.mawen.spring.context.sample.service;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package com.mawen.spring.context.sample.registerbean.service;
 
 /**
  * 订单服务

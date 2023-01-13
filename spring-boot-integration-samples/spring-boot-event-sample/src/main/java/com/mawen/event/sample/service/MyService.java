@@ -32,14 +32,20 @@ public class MyService {
         throw new RuntimeException("This is a exception.");
     }
 
+    /**
+     * {@link TransactionalEventListener}支持配合{@link Async}异步调用，在调用前，会查看之前事务是否满足{@link TransactionalEventListener#phase()}的条件
+     *
+     * @param event 事件
+     */
     @Order(0)
-    @TransactionalEventListener(value = MyEvent.class, phase = TransactionPhase.BEFORE_COMMIT)
+    @Async
+    @TransactionalEventListener(value = MyEvent.class, phase = TransactionPhase.AFTER_COMMIT)
     public void handleMyEventTransactional(MyEvent event) {System.out.println("Transactional Event isSynchronizationActive: " + TransactionSynchronizationManager.isSynchronizationActive());
-        System.out.println("Transactional Event isCurrentTransactionReadOnly: " + TransactionSynchronizationManager.isCurrentTransactionReadOnly());
-        System.out.println("Transactional Event isActualTransactionActive: " + TransactionSynchronizationManager.isActualTransactionActive());
-        System.out.println("Transactional Event getCurrentTransactionName: " + TransactionSynchronizationManager.getCurrentTransactionName());
-        System.out.println("Transactional Event CurrentTransactionIsolationLevel: " + TransactionSynchronizationManager.getCurrentTransactionIsolationLevel());
-        System.out.println("Transactional Event ResourceMap: " + TransactionSynchronizationManager.getResourceMap());
+        System.out.printf("%s Transactional Event isCurrentTransactionReadOnly: %s%n", Thread.currentThread().getName(), TransactionSynchronizationManager.isCurrentTransactionReadOnly());
+        System.out.printf("%s Transactional Event isActualTransactionActive: %s%n", Thread.currentThread().getName(), TransactionSynchronizationManager.isActualTransactionActive());
+        System.out.printf("%s Transactional Event getCurrentTransactionName: %s%n", Thread.currentThread().getName(), TransactionSynchronizationManager.getCurrentTransactionName());
+        System.out.printf("%s Transactional Event CurrentTransactionIsolationLevel: %s%n", Thread.currentThread().getName(), TransactionSynchronizationManager.getCurrentTransactionIsolationLevel());
+        System.out.printf("%s Transactional Event ResourceMap: %s%n", Thread.currentThread().getName(), TransactionSynchronizationManager.getResourceMap());
 
         if (true) {
             throw new RuntimeException("This is a exception");
@@ -62,6 +68,7 @@ public class MyService {
 
         throw new RuntimeException("This is a exception.");
     }
+
 
 
 

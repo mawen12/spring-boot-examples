@@ -1,7 +1,7 @@
-package com.mawen.spring.context.sample;
+package com.mawen.spring.context.sample.registerbean;
 
-import com.mawen.spring.context.sample.model.MyBean;
-import com.mawen.spring.context.sample.model.OtherBean;
+import com.mawen.spring.context.sample.registerbean.model.MyBean;
+import com.mawen.spring.context.sample.registerbean.model.OtherBean;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.support.GenericBeanDefinition;

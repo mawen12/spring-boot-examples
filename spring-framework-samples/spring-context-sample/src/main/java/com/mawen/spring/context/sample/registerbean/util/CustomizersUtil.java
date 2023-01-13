@@ -1,4 +1,4 @@
-package com.mawen.spring.context.sample.util;
+package com.mawen.spring.context.sample.registerbean.util;
 
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionCustomizer;

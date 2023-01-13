@@ -1,4 +1,4 @@
-package com.mawen.spring.context.sample.model;
+package com.mawen.spring.context.sample.registerbean.model;
 
 import lombok.Data;
 
