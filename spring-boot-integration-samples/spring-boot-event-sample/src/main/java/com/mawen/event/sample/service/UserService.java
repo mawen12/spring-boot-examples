@@ -42,6 +42,10 @@ public class UserService {
         userMapper.updateById(entity);
 
         publisher.publish(new MyEvent(this, entity.getName()));
+
+//        if (true) {
+//            throw new RuntimeException("error");
+//        }
     }
 
     public void updateUser1() {

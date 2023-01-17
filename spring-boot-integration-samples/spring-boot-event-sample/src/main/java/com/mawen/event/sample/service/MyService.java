@@ -37,9 +37,9 @@ public class MyService {
      *
      * @param event 事件
      */
-    @Order(0)
-    @Async
-    @TransactionalEventListener(value = MyEvent.class, phase = TransactionPhase.AFTER_COMMIT)
+//    @Order(0)
+//    @Async
+//    @TransactionalEventListener(value = MyEvent.class, phase = TransactionPhase.AFTER_COMMIT)
     public void handleMyEventTransactional(MyEvent event) {System.out.println("Transactional Event isSynchronizationActive: " + TransactionSynchronizationManager.isSynchronizationActive());
         System.out.printf("%s Transactional Event isCurrentTransactionReadOnly: %s%n", Thread.currentThread().getName(), TransactionSynchronizationManager.isCurrentTransactionReadOnly());
         System.out.printf("%s Transactional Event isActualTransactionActive: %s%n", Thread.currentThread().getName(), TransactionSynchronizationManager.isActualTransactionActive());
@@ -54,8 +54,9 @@ public class MyService {
 
     }
 
-//    @Order(1)
-//    @EventListener(MyEvent.class)
+    @Order(1)
+//    @Async
+    @TransactionalEventListener(value = MyEvent.class, phase = TransactionPhase.BEFORE_COMMIT)
     public void handleMyEvent(MyEvent event) {
         System.out.println("Event isSynchronizationActive: " + TransactionSynchronizationManager.isSynchronizationActive());
         System.out.println("Event isCurrentTransactionReadOnly: " + TransactionSynchronizationManager.isCurrentTransactionReadOnly());
