@@ -15,6 +15,7 @@
         <module>spring-boot-quartz-sample</module>
         <module>spring-boot-logging-sample</module>
         <module>spring-boot-event-sample</module>
+        <module>spring-boot-elasticsearch-sample</module>
     </modules>
     <packaging>pom</packaging>
 

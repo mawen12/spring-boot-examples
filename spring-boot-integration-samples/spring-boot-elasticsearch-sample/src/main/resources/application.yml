@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: elasticsearch-sample
+elasticsearch:
+  host: localhost
+  port: 9200
+  clustername: docker-cluster
+
+
