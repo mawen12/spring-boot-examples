@@ -20,7 +20,7 @@ public @interface TransactionalService {
     /**
      * @return 服务 Bean 名称
      */
-    @AliasFor(attribute = "value")
+    @AliasFor("value")
     String name() default "";
 
     /**
@@ -36,8 +36,8 @@ public @interface TransactionalService {
      *
      * @return {@link PlatformTransactionManager} Bean 名称，默认关联 "txManager" Bean
      */
-    @AliasFor(attribute = "transactionManager", annotation = Transactional.class)
-    String manager() default "txManager";
+    @AliasFor(annotation = Transactional.class, attribute = "transactionManager")
+    String transactionManager() default "txManager";
 
 }
 

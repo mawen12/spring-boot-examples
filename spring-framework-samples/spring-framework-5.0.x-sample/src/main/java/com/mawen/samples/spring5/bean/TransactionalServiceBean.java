@@ -5,7 +5,7 @@ import com.mawen.samples.spring5.annotation.TransactionalService;
 /**
  * {@link TransactionalService} Bean
  */
-@TransactionalService(name = "transactionalServiceBean")
+@TransactionalService
 public class TransactionalServiceBean {
 
     public void save() {
