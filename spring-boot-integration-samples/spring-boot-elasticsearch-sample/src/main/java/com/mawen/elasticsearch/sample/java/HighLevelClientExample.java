@@ -3,14 +3,11 @@ package com.mawen.elasticsearch.sample.java;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
-import com.mawen.elasticsearch.sample.java.model.Product;
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.RestHighLevelClientBuilder;
-import org.elasticsearch.core.List;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 /**
  * Elasticsearch High Level Client 示例

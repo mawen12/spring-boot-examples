@@ -11,8 +11,8 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(ServerImportSelector.class) // 导入 ServerImportSelector
-//@Import(ServerImportBeanDefinitionRegistrar.class)
+//@Import(ServerImportSelector.class) // 导入 ServerImportSelector
+@Import(ServerImportBeanDefinitionRegistrar.class)
 public @interface EnableServer {
 
     /**
