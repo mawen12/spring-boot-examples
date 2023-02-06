@@ -1,0 +1,32 @@
+PUT /asset
+{
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "chineseName": {
+          "type": "text",
+        },
+        "extendedAttrs": {
+          "type": "nested",
+          "properties": {
+            "keyCode": {
+              "type": "keyword"
+            },
+            "valueId": {
+              "type": "keyword"
+            },
+            "valueLabel": {
+              "type": "text",
+            },
+            "keyLabel": {
+              "type": "keyword"
+            }
+          }
+        },
+        "id": {
+          "type": "keyword"
+        }
+      }
+    }
+  }
+}

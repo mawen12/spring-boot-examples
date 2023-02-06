@@ -1,0 +1,19 @@
+PUT human
+{
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "id": { "type": "text" },
+        "name": { "type": "text" },
+        "cats": {
+          "type": "nested",
+          "properties": {
+            "colors": { "type": "integer" },
+            "name": { "type": "text" },
+            "breed": { "type": "text" }
+          }
+        }
+      }
+    }
+  }
+}

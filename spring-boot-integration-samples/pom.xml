@@ -15,13 +15,16 @@
         <module>spring-boot-quartz-sample</module>
         <module>spring-boot-logging-sample</module>
         <module>spring-boot-event-sample</module>
-        <module>spring-boot-elasticsearch-sample</module>
+        <module>spring-boot-elasticsearch-8.5.x-sample</module>
+        <module>spring-boot-elasticsearch-6.8.x-sample</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
         <spring-boot.version>2.7.7</spring-boot.version>
         <mybatis-spring-boot.version>2.3.0</mybatis-spring-boot.version>
+
+        <elasticsearch>7.17.8</elasticsearch>
     </properties>
 
     <dependencyManagement>
@@ -39,6 +42,27 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${elasticsearch}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mawen</groupId>
+            <artifactId>shared-libiaries</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>
