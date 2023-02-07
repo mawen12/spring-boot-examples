@@ -2,12 +2,15 @@ package com.mawen.elasticsearch.sample.java.document.delete;
 
 import com.mawen.elasticsearch.sample.java.util.ResponseParserUtil;
 import org.apache.http.HttpHost;
+import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.index.reindex.BulkByScrollResponse;
 import org.elasticsearch.index.reindex.DeleteByQueryRequest;
+import org.elasticsearch.rest.RestStatus;
 
+import javax.management.Query;
 import java.io.IOException;
 
 /**
@@ -29,12 +32,18 @@ public class DeleteByQueryRequestExample {
         DeleteByQueryRequest request = new DeleteByQueryRequest("human");
         request.setConflicts("proceed");
         request.setRefresh(true);
+        // todo set query
 
         try {
             BulkByScrollResponse bulkResponse = client.deleteByQuery(request, RequestOptions.DEFAULT);
             ResponseParserUtil.parseResponse(bulkResponse);
-        } catch (IOException e) {
-
+        } catch (ElasticsearchException e) {
+            if (e.status() == RestStatus.CONFLICT) {
+                String index = e.getIndex().getName();
+                System.out.printf("%s 文档创建失败，文档已存在: %s", index, e.getMessage());
+            } else {
+                System.out.printf("文档创建失败，失败原因: %s", e.getMessage());
+            }
         }
 
         client.close();

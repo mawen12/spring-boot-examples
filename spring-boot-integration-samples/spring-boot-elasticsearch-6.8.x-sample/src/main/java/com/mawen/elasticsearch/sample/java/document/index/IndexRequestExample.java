@@ -1,5 +1,9 @@
 package com.mawen.elasticsearch.sample.java.document.index;
 
+import com.alibaba.fastjson2.JSON;
+import com.google.common.collect.Lists;
+import com.mawen.elasticsearch.sample.java.model.Asset;
+import com.mawen.elasticsearch.sample.java.model.AssetAttr;
 import org.apache.http.HttpHost;
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.index.IndexRequest;
@@ -38,17 +42,22 @@ public class IndexRequestExample {
 
         // 索引请求
         IndexRequest request = new IndexRequest(
-                "posts", // 索引
-                "doc", // 类型
+                "asset", // 索引
+                "_doc", // 类型
                 "1" // 文档Id
         );
 
         // 1.字符串标识的文档源
-        String jsonString = "{" +
-                "\"user\":\"kimchy\"," +
-                "\"postDate\":\"2013-01-30\"," +
-                "\"message\":\"trying out Elasticsearch\"" +
-                "}";
+        String jsonString = JSON.toJSONString(Asset.builder()
+                                                      .id(1L)
+                                                      .chineseName("码值")
+                                                      .extendedAttrs(Lists.newArrayList(
+                                                              AssetAttr.builder().keyCode("comt").keyLabel("备注").valueId(
+                                                                      "目标单词ID").valueLabel("目标单词ID").build(),
+                                                              AssetAttr.builder().keyCode("col_sorting_seq_num").keyLabel(
+                                                                      "字段排序序号").valueId("2").valueLabel("2").build()
+                                                      ))
+                                                      .build());
         request.source(jsonString, XContentType.JSON);
 
         // 2.Map结构的文档源
@@ -89,7 +98,10 @@ public class IndexRequestExample {
         } catch (ElasticsearchException e) {
             if (e.status() == RestStatus.CONFLICT) {
                 String index = e.getIndex().getName();
-                System.out.printf("%s 文档创建失败，文档已存在: %s", index, e.getMessage());
+                System.out.printf("%s/%s/%s 文档创建失败，文档已存在: %s", request.index(), request.type(), request.id(), e.getMessage());
+            } else {
+                System.out.printf("%s/%s/%s 文档创建失败，失败原因: %s", request.index(), request.type(), request.id(), e.getMessage());
+
             }
         }
         client.close();
