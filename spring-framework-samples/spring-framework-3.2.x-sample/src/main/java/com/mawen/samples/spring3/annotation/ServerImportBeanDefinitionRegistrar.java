@@ -1,5 +1,6 @@
 package com.mawen.samples.spring3.annotation;
 
+import com.mawen.samples.spring3.bootstrap.EnableServerBootstrap;
 import com.mawen.samples.spring3.server.Server;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
@@ -14,6 +15,11 @@ import java.util.stream.Stream;
  */
 public class ServerImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
 
+    /**
+     *
+     * @param annotationMetadata 启动类注解源信息，此处对应{@link EnableServerBootstrap}类
+     * @param beanDefinitionRegistry
+     */
     @Override
     public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
         // 复用 {@link ServerImportSelector} 实现，避免重复劳动

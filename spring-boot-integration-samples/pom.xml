@@ -17,6 +17,7 @@
         <module>spring-boot-event-sample</module>
         <module>spring-boot-elasticsearch-8.5.x-sample</module>
         <module>spring-boot-elasticsearch-6.8.x-sample</module>
+        <module>spring-boot-rocketmq-4.9.x-sample</module>
     </modules>
     <packaging>pom</packaging>
 
