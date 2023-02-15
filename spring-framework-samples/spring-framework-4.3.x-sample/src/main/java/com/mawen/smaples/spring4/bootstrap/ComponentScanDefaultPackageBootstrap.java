@@ -6,7 +6,9 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.stream.Stream;
 
 /**
- * {@link ComponentScan @ComponentScan} 默认包引导类
+ * {@link ComponentScan} 默认包引导类
+ * 基于默认包扫描的方式不被 Spring 推荐，取代的是使用 {@link ComponentScan#basePackageClasses()}来指定默认包中的类即可
+ *
  */
 @ComponentScan(basePackages = "") // 扫描默认根包
 public class ComponentScanDefaultPackageBootstrap {

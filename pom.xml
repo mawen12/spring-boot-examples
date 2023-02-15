@@ -18,6 +18,9 @@
         <module>spring-boot-integration-samples</module>
         <module>spring-boot-feature-samples</module>
         <module>spring-framework-samples/spring-webmvc-3.2.x-sample</module>
+        <module>spring-framework-samples/spring-framework-2.0.x-sample</module>
+        <module>spring-boot-2.x-samples/auto-configuration-sample</module>
+        <module>spring-boot-2.x-samples/formatter-spring-boot-starter</module>
     </modules>
 
     <properties>

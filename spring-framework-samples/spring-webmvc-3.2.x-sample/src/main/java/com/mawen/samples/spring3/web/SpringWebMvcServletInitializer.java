@@ -11,11 +11,23 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  */
 public class SpringWebMvcServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
+    /**
+     * 提供应用上下文所需的配置类，用于生成 Root WebApplicationContext
+     *
+     * @see AbstractAnnotationConfigDispatcherServletInitializer#createRootApplicationContext()
+     * @return 配置类集合
+     */
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[0];
     }
 
+    /**
+     * 提供上下文需要的配置类，用于生成 DispatcherServlet WebApplicationContext
+     *
+     * @see AbstractAnnotationConfigDispatcherServletInitializer#createServletApplicationContext()
+     * @return 配置类集合
+     */
     @Override
     protected Class<?>[] getServletConfigClasses() { // DispatcherServlet 配置Bean
         return of(SpringWebMvcConfiguration.class);
