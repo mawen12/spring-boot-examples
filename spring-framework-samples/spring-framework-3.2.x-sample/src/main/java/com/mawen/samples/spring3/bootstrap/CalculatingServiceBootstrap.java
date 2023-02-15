@@ -18,7 +18,7 @@ public class CalculatingServiceBootstrap {
     static {
         // 通过 Java 系统属性设置 Spring Profile
         // 以下语句等效于 ConfigurableEnvironment.setActiveProfiles("Java8")
-        System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, "Java7");
+//        System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, "Java7");
         // 以下语句等效于 ConfigurableEnvironment.setDefaultProfile("Java7")
         System.setProperty(AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "Java8");
     }
@@ -33,7 +33,7 @@ public class CalculatingServiceBootstrap {
         // 获取 CalculatingService Bean
         CalculatingService calculatingService = context.getBean(CalculatingService.class);
         String[] beanDefinitionNames = context.getBeanDefinitionNames();
-        System.out.println(Arrays.asList(beanDefinitionNames));
+        Arrays.stream(beanDefinitionNames).forEach(System.out::println);
         // 输出累加结果
         calculatingService.sum(1, 2, 3, 4, 5);
         // 关闭上下文
