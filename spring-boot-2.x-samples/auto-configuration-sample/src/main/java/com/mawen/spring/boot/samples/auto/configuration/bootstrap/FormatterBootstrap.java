@@ -1,6 +1,7 @@
 package com.mawen.spring.boot.samples.auto.configuration.bootstrap;
 
 import com.mawen.spring.boot.samples.autoconfigure.formatter.Formatter;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -26,8 +27,13 @@ public class FormatterBootstrap {
         Map<String, Object> data = new HashMap<>();
         data.put("name", "小马哥");
         // 获取 Formatter，来自 FormatterAutoConfiguration
-        Formatter formatter = context.getBean(Formatter.class);
-        System.out.printf("formatter.format(data) : %s\n", formatter.format(data));
+        Map<String, Formatter> beans = context.getBeansOfType(Formatter.class);
+        if (beans.isEmpty()) {// 如果 Bean 不存在，则抛出异常
+            throw new NoSuchBeanDefinitionException(Formatter.class);
+        }
+        beans.forEach((beanName, formatter) -> {
+            System.out.printf("[Bean name : %s] %s.format(data) : %s\n", beanName, formatter.getClass().getSimpleName(), formatter.format(data));
+        });
         // 关闭当前上下文
         context.close();
     }

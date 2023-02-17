@@ -20,6 +20,13 @@
             <artifactId>spring-boot-starter</artifactId>
             <optional>true</optional> <!-- 防止依赖传递到上层应用中，导致出现 ClassNotFoundException、NoClassDefFoundError、NoSuchMethodException 等 -->
         </dependency>
+
+        <!-- Jackson 依赖(框架工程) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
 
