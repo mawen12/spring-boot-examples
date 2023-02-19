@@ -17,7 +17,7 @@ import org.springframework.core.Ordered;
 @AutoConfigureOrder(Ordered.LOWEST_PRECEDENCE) // 指定装配顺序，确保在 JacksonObjectMapperConfiguration 之后，则注册 objectMapperFormatter， 如果注释掉，那么会注册 jsonFormatter
 @ConditionalOnProperty(prefix = "formatter", name = "enabled", havingValue = "true",
         matchIfMissing = true) // 当属性配置不存在时，同样视作匹配
-@ConditionalOnResource(resources = "META-INF/spring.factories")
+@ConditionalOnResource(resources = "META-INF/spring.factories") // 该注解存在不严谨性，可能会存在
 @ConditionalOnNotWebApplication
 @ConditionalOnExpression("${formatter.enabled:true}")
 public class FormatterAutoConfiguration {

@@ -21,6 +21,7 @@
         <module>spring-framework-samples/spring-framework-2.0.x-sample</module>
         <module>spring-boot-2.x-samples/auto-configuration-sample</module>
         <module>spring-boot-2.x-samples/formatter-spring-boot-starter</module>
+        <module>spring-boot-2.x-samples/spring-application-sample</module>
     </modules>
 
     <properties>

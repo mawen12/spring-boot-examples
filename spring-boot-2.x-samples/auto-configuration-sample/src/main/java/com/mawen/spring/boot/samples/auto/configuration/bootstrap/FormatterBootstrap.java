@@ -22,6 +22,7 @@ public class FormatterBootstrap {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = new SpringApplicationBuilder(FormatterBootstrap.class)
                 .web(WebApplicationType.NONE) // 非 Web 应用
+//                .properties("formatter.enabled=true") // 默认配置属性，"="前后不能有空格
                 .run(args);// 运行
         // 待格式化对象
         Map<String, Object> data = new HashMap<>();
