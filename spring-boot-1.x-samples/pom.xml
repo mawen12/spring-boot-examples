@@ -13,6 +13,11 @@
     <name>Spring Boot 1.x 示例主工程</name>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>spring-boot-1.3.x-project</module>
+        <module>spring-boot-1.4.x-project</module>
+    </modules>
+
     <properties>
         <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
     </properties>
