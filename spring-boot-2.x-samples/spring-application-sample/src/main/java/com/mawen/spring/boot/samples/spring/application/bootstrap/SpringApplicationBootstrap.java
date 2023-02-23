@@ -1,6 +1,6 @@
 package com.mawen.spring.boot.samples.spring.application.bootstrap;
 
-import com.mawen.spring.boot.samples.spring.application.bootstrap.config.SpringApplicationConfiguration;
+import com.mawen.spring.boot.samples.spring.application.config.SpringApplicationConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.jmx.export.annotation.AnnotationMBeanExporter;

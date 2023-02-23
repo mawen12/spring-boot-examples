@@ -1,0 +1,3 @@
+# 配置 ApplicationListener
+org.springframework.context.ApplicationListener=\
+  com.mawen.spring.boot.samples.spring.application.event.ApplicationPreparedEventListener

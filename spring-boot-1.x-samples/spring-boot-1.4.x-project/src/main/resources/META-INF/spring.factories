@@ -1,0 +1,7 @@
+# Failure Analyzer 配置
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+  com.mawen.spring.boot.samples.diagnostics.UnknownErrorFailureAnalyzer
+
+# FailureAnalysisReporter 配置
+org.springframework.boot.diagnostics.FailureAnalysisReporter=\
+  com.mawen.spring.boot.samples.diagnostics.ConsoleFailureAnalysisReporter

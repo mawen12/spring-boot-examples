@@ -17,6 +17,7 @@
         <module>spring-framework-samples</module>
         <module>spring-boot-integration-samples</module>
         <module>spring-boot-feature-samples</module>
+        <module>spring-boot-1.x-samples/spring-boot-1.5.x-project</module>
     </modules>
 
     <properties>

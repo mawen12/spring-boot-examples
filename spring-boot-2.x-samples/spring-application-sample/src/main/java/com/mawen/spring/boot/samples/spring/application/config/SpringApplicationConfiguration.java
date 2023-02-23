@@ -1,4 +1,4 @@
-package com.mawen.spring.boot.samples.spring.application.bootstrap.config;
+package com.mawen.spring.boot.samples.spring.application.config;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
